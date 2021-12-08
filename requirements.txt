@@ -1,0 +1,11 @@
+async_lru==1.0.2
+TgCrypto-1.2.2
+pyrogram 
+pysocks 
+pyaes 
+loguru 
+colorama 
+win32-setctime
+pyaes
+codecov 
+pytest 
