@@ -7,8 +7,8 @@ from pyrogram import Client, idle
 async def main():
     bot_client = Client("bot")
     await bot_client.start()
-    import plugins.glovar
-    setattr(plugins.glovar, "bot_client", bot_client)
+    import plugins.bot
+    setattr(plugins.bot, "bot_client", bot_client)
     bot_info = await bot_client.get_me()
     logger.success(f"Bot instance \"{bot_info.username}\" started.")
     await idle()
