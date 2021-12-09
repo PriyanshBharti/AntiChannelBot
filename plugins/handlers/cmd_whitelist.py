@@ -1,7 +1,8 @@
 from typing import Optional
 
 from loguru import logger
-from pyrogram import Client, types, filters, errors
+from pyrogram import Client, types, filters, errors, raw
+from pyrogram.raw import functions
 
 from plugins.filters import mod_filters
 from plugins.functions import database
@@ -40,14 +41,17 @@ async def get_channel_id(client: Client, message: types.Message) -> Optional[int
         await message.reply_text(f"User is not a channel.", True)
         return
     try:
-        channel_peer = await client.resolve_peer(str_mention)
-        if not channel_peer.channel_id:
-            # User is not allowed
-            await message.reply_text(f"User is not a channel.", True)
+        channel_peer = await client.get_chat(str_mention)
+        if channel_peer is None:
+            # Channel not found/not exist
+            await message.reply_text("Channel not found/exist", True)
             return
-        channel_id = channel_peer.channel_id
+
+        channel_id = channel_peer.id
 
         return get_raw_ch_number(channel_id)
+    except (errors.ChannelPrivate, errors.ChannelPrivate, errors.ChannelPublicGroupNa, errors.ChatNotModified):
+        return
     except (errors.UsernameOccupied, errors.UsernameInvalid):
         return
     except:  # noqa
