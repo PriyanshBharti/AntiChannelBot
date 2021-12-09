@@ -5,7 +5,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 async def start(_, message: Message):
     await message.reply_text(
         f"""<b>Hi {message.from_user.first_name} 😉️!</b>
- `Heya I'm A Anti Channel Tegram bot to delete and ban message sent by channel`""",
+ `Heya I'm A Anti Channel Tegram bot to delete and ban message sent by channel Type /help for impformation`""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
