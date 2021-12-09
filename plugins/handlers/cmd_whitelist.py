@@ -7,7 +7,7 @@ from plugins.filters import mod_filters
 from plugins.functions import database
 from plugins.functions.telegram import is_group_admin
 from plugins.functions.utils import get_command_type, get_message_mentions, bold, italic, get_raw_ch_number
-from plugins.glovar import prefix
+from plugins.bot import prefix
 
 
 async def get_channel_id(client: Client, message: types.Message) -> Optional[int]:
