@@ -48,7 +48,7 @@ def init_link_channel():
 
 
 async def main():
-    import plugins.glovar
+    import plugins.bot
     init_link_channel()
     bot_client = Client("bot")
     setattr(plugins.bot, "bot_client", bot_client)
