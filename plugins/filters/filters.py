@@ -26,7 +26,7 @@ def command(commands: Union[str, List[str]], prefixes: Union[str, List[str]] = "
             Pass True if you want your command(s) to be case sensitive. Defaults to False.
             Examples: when True, command="Start" would trigger /Start but not /start.
     """
-    from plugins.glovar import bot_name
+    from plugins.fixed import bot_name
 
     command_re = re.compile(r"([\"'])(.*?)(?<!\\)\1|(\S+)")
 
