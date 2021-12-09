@@ -10,7 +10,7 @@ def init_link_channel():
     """
     Initialize linked channel database's table
     """
-    from plugins.glovar import linked_channel_db, whitelist_db, stat_db
+    from plugins.bot import linked_channel_db, whitelist_db, stat_db
 
     sql_path = "plugins/sqls/"
 
