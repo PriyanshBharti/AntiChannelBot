@@ -6,7 +6,6 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 @Client.on_message(
     filters.command("help")
     & filters.private
-    & filters.group
     & ~ filters.edited
 )
 async def help(client: Client, message: Message):
@@ -25,7 +24,7 @@ Commands
 - /crm  : Remove whitelist of the channel from this group
 
 **=>> Note 🧑‍🔧**
-- Use /is/cwl and /crm In Groups Online /Comond channel id
+- Use /is/cwl and /crm In Groups Only /is channel id and put all other Commands below with channel id.
  </b>""",
         reply_markup=InlineKeyboardMarkup(
             [
