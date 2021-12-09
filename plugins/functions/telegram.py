@@ -13,7 +13,7 @@ async def is_group_admin(cid: int, uid: int) -> Union[bool, ChatMember, None]:
     :param uid: User ID
     :return: ChatMember object when true, false/none when failed
     """
-    from plugins.glovar import bot_client
+    from plugins.bot import bot_client
     result: Optional[ChatMember] = None
     try:
         result = await bot_client.get_chat_member(chat_id=cid, user_id=uid)  # noqa
