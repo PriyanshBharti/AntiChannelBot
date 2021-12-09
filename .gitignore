@@ -1,4 +1,7 @@
 .idea
-/bot.session
-/bot.session-journal
+/*.session
+/*.session-journal
+/*.sqlite-journal
+/*.sqlite
 /config.ini
+
