@@ -21,7 +21,7 @@ async def get_linked_group(*, channel_peer: base.InputChannel = None, channel_id
     :raise ValueError: Both channel_peer and channel_id is not set
     :return: Group id
     """
-    from plugins.glovar import bot_client
+    from plugins.bot import bot_client
 
     # Check for channel_peer and channel_id is set
     if channel_peer is None and channel_id is None:
